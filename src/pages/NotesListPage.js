@@ -1,9 +1,14 @@
 import React from 'react'
+import notes from '../assets/data'
 
 const NotesListPage = () => {
     return (
         <div>
-            Notes
+            <div className="notes-list">
+                {notes.map(note => (
+                    <p>{note.body}</p>
+                ))}
+            </div>
         </div>
     )
 }

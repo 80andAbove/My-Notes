@@ -12,3 +12,5 @@ let notes = [
         "body": "Text Jess",
     },
 ]
+
+export default notes
