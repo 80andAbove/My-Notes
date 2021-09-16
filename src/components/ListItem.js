@@ -1,10 +1,9 @@
 import React from 'react'
 
-export const ListItem = (props) => {
-    console.log('PROPS:', props)
+const ListItem = ({note}) => {
     return (
         <div>
-            <h3>{props.note.body}</h3>
+            <h3>{note.body}</h3>
         </div>
     )
 }
