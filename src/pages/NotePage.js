@@ -17,7 +17,9 @@ const NotePage = ({match}) => {
                     </Link>
                 </h3>
             </div>
-            <p>{note?.body}</p>
+            <textarea value={note?.body}>
+
+            </textarea>
         </div>
     )
 }
