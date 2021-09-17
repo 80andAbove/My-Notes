@@ -36,3 +36,21 @@ hr{
     border: 1px solid $light-blue;
 }
 
+.note textarea {
+    border: none;
+    padding: 16px 12px;
+    width: 95%;
+    height: 70vh;
+    resize: none;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .note textarea:active,
+  .note textarea:focus {
+    outline: none;
+    border: none;
+  }
+  
+  .note textarea::-webkit-scrollbar {
+    display: none;
+}

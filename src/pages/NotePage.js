@@ -18,7 +18,7 @@ const NotePage = ({match}) => {
                 </h3>
             </div>
             <textarea value={note?.body}>
-
+            
             </textarea>
         </div>
     )
