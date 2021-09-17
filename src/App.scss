@@ -21,13 +21,23 @@ body{
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
     position: relative;
 }
-  
 
-.header{
+.app-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    justify-content: space-between;
     background: $saddle-brown;
     background: linear-gradient(164deg, $chamoise 0%, $saddle-brown 100%);
     height: 4rem;
     padding-top: 5px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  
+    h1 {
+        font-size: 30px;
+        font-weight: 800;
+        text-align: center;
+    }
 }
 
 hr{
@@ -43,14 +53,14 @@ hr{
     height: 70vh;
     resize: none;
     scrollbar-width: none; /* Firefox */
-  }
+}
   
-  .note textarea:active,
-  .note textarea:focus {
+.note textarea:active,
+.note textarea:focus {
     outline: none;
     border: none;
-  }
+}
   
-  .note textarea::-webkit-scrollbar {
+.note textarea::-webkit-scrollbar {
     display: none;
 }
