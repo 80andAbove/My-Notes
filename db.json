@@ -1,19 +1,16 @@
 {
-  "posts": [
+  "notes": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+        "id": 1,
+        "body": "Go for a walk"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+        "id": 2,
+        "body": "Take out the trash"
+    },
+    {
+        "id": 3,
+        "body": "Text Jess"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
