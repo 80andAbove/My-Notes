@@ -46,6 +46,20 @@ hr{
     border: 1px solid $light-blue;
 }
 
+.notes-title,
+.notes-count {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.notes-count {
+  font-size: 18px;
+}
+
+.notes-list a{
+    text-decoration: none;
+}
+
 .note textarea {
     border: none;
     padding: 16px 12px;
