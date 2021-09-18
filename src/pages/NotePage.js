@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { ReactComponent as ArrowLeft } from '../assets/icons/chevron-left.svg'
 import { Link } from 'react-router-dom'
 
-const NotePage = ({match}) => {
+const NotePage = ({match, history}) => {
     let noteId = match.params.id
 
     // let note = notes.find(note => note.id === Number(noteId)) 
@@ -11,25 +11,41 @@ const NotePage = ({match}) => {
     let [note, setNotes] = useState([null])
 
     useEffect(() => {
-        getNotes()
+        getNote()
     }, [noteId])
 
-    let getNotes = async () => {
+    let getNote = async () => {
         let response = await fetch(`http://localhost:8000/notes/${noteId}`)
         let data = await response.json()
         console.log('data:', data)
         setNotes(data)
     }
+
+    let updateNote = async () =>{
+        await fetch(`http://localhost:8000/notes/${noteId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(note)
+        })
+    }
+
+    let handleSubmit = () => {
+        updateNote()
+        history.push('/')
+    }
+
     return (
         <div className="note">
             <div className="note-header">
                 <h3>
                     <Link to="/" >
-                        <ArrowLeft />
+                        <ArrowLeft onClick={handleSubmit} />
                     </Link>
                 </h3>
             </div>
-            <textarea value={note?.body}>
+            <textarea onChange={(e)=> {setNotes({...note, 'body':e.target.value})}} value={note?.body}>
             
             </textarea>
         </div>
