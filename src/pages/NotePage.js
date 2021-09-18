@@ -28,7 +28,7 @@ const NotePage = ({match, history}) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(note)
+            body: JSON.stringify({ ...note, 'updated': new Date() })
         })
     }
 
@@ -38,7 +38,7 @@ const NotePage = ({match, history}) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(note)
+            body: JSON.stringify({ ...note, 'updated': new Date() })
         })
     }
 
@@ -48,7 +48,7 @@ const NotePage = ({match, history}) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(note)
+            body: JSON.stringify({ ...note, 'updated': new Date() })
         })
         history.push('/')
     }
