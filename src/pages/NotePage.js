@@ -31,8 +31,23 @@ const NotePage = ({match, history}) => {
         })
     }
 
+    let deleteNote = async () => {
+        await fetch(`http://localhost:8000/notes/${noteId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(note)
+        })
+        history.push('/')
+    }
+
     let handleSubmit = () => {
-        updateNote()
+        if(noteId !== 'new' && !note.body){
+            deleteNote()
+        } else if(noteId === 'new'){
+            updateNote()
+        }
         history.push('/')
     }
 
@@ -44,6 +59,7 @@ const NotePage = ({match, history}) => {
                         <ArrowLeft onClick={handleSubmit} />
                     </Link>
                 </h3>
+                <button>Delete</button>
             </div>
             <textarea onChange={(e)=> {setNotes({...note, 'body':e.target.value})}} value={note?.body}>
             
